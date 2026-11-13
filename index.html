@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizzatore AR</title>
+  <script type="module" src="https://googleapis.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: sans-serif;
+    }
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+    #ar-button {
+      background-color: #007bff;
+      color: white;
+      border-radius: 25px;
+      border: none;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <model-viewer 
+    src="oggetto.glb" 
+    ar 
+    ar-modes="webxr scene-viewer quick-look" 
+    ar-scale="fixed"
+    camera-controls 
+    shadow-intensity="1"
+    alt="Modello 3D in Realtà Aumentata">
+    
+    <button slot="ar-button" id="ar-button">
+      Visualizza nello spazio (AR)
+    </button>
+    
+  </model-viewer>
+
+</body>
+</html>
